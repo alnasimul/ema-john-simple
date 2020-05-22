@@ -1,6 +1,6 @@
 import React from 'react';
-import './use-auth'
-import Auth from './use-auth';
+import './useAuth'
+import Auth from './useAuth';
 
 
 const Login = () => {
@@ -9,7 +9,9 @@ const Login = () => {
     return (
         <div>
            <h1>Join The Party !!!</h1> 
-           <button onClick = {auth.signInWithGoogle}>Sign in with Google</button>
+           {    auth.user ? <button onClick={auth.signOut}>Sign Out</button> :
+               <button onClick = {auth.signInWithGoogle}>Sign in with Google</button>
+           }
         </div>
     );
 };
