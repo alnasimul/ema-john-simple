@@ -5,10 +5,15 @@ import ReviewItem from '../ReviewItem/ReviewItem';
 import Cart from '../Cart/Cart';
 import { Link } from 'react-router-dom';
 import happyImage from '../../images/giphy.gif'
+import { useAuth } from '../Login/useAuth';
+
+
+
 
 const Review = () => {
     const [cart, setCart] = useState([]);
     const [orderPlaced, setOrderPlaced] = useState(false);
+    const auth = useAuth();
     const handelRemoveItem = (productKey) => {
         console.log('remove clicked');
 
@@ -56,7 +61,10 @@ const Review = () => {
             </div>
             <div className="cart-container">
                 <Cart cart = {cart}>
-                    <Link to="/shipment">  <button  className="main-button">Proceed to checkout</button> </Link>
+                    <Link to="/shipment"> 
+                    {auth.user ? <button  className="main-button">Proceed to Checkout</button> :
+                        <button className="main-button"> Login to Proceed </button> } 
+                    </Link>
                 </Cart>
             </div>
         </div>

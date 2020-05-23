@@ -15,8 +15,9 @@ import Manage from './components/Manage/Manage';
 import NotFound from './components/notFound/NotFound';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import Login from './components/Login/Login';
-import { AuthContextProvider } from './components/Login/useAuth';
+import { AuthContextProvider, PrivateRoute } from './components/Login/useAuth';
 import Shipment from './components/Shipment/Shipment';
+
 
 
 function App() {
@@ -44,9 +45,9 @@ function App() {
             <Route path="/product/:productKey">
               <ProductDetails></ProductDetails>
             </Route>
-            <Route path="/shipment">
+            <PrivateRoute path="/shipment">
               <Shipment></Shipment>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
