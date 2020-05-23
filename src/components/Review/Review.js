@@ -56,7 +56,7 @@ const Review = () => {
             </div>
             <div className="cart-container">
                 <Cart cart = {cart}>
-                    <Link to="/review">  <button onClick= {handelPlaceOrder} className="main-button">Place Order</button> </Link>
+                    <Link to="/shipment">  <button  className="main-button">Proceed to checkout</button> </Link>
                 </Cart>
             </div>
         </div>

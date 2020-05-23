@@ -16,6 +16,7 @@ import NotFound from './components/notFound/NotFound';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import Login from './components/Login/Login';
 import { AuthContextProvider } from './components/Login/useAuth';
+import Shipment from './components/Shipment/Shipment';
 
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
             </Route>
             <Route path="/product/:productKey">
               <ProductDetails></ProductDetails>
+            </Route>
+            <Route path="/shipment">
+              <Shipment></Shipment>
             </Route>
             <Route path="*">
               <NotFound></NotFound>
