@@ -1,15 +1,10 @@
 import React from 'react';
-import { useAuth } from '../Login/useAuth';
+
 
 
 
 const Cart = (props) => {
 
-    const auth = useAuth();
-
-    console.log(auth.user);
-
-   
     let cart = props.cart;
     let total = 0;
 
@@ -50,7 +45,6 @@ const Cart = (props) => {
             {
                 props.children
             }
-            <p></p>
         </div>
     );
 };

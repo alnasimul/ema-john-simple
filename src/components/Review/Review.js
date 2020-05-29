@@ -55,6 +55,9 @@ const Review = () => {
         <div className="twin-container">
             <div className="product-container">
                 {thankYou}
+                {
+                    !cart.length && <h1>Your cart is empty. <a href="/shop">Keep Shopping</a></h1>
+                }
                 {cart.map(pd => <ReviewItem
                     key={pd.key} product={pd} handelRemoveItem={handelRemoveItem}>
                 </ReviewItem>)}
